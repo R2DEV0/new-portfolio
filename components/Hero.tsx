@@ -19,7 +19,7 @@ export function Hero() {
             Senior Full-Stack Developer
           </p>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
-            Crafting innovative digital experiences with MERN stack, React, Next.js, and AWS.
+            Crafting innovative digital experiences with MERN, React, Next.js, AWS, and more.
             Passionate about building scalable solutions and immersive user experiences.
           </p>
           
