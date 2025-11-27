@@ -32,11 +32,11 @@ export function Blog() {
               >
                 <Link
                   href={`/blog/${post.id}`}
-                  className="block bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all hover:scale-[1.02] overflow-hidden group"
+                  className="block h-full bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all hover:scale-[1.02] overflow-hidden group flex flex-col"
                 >
                   {/* Image or Icon */}
                   {post.image ? (
-                    <div className="w-full h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                    <div className="w-full h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden flex-shrink-0">
                       <img
                         src={post.image}
                         alt={post.title}
@@ -44,14 +44,14 @@ export function Blog() {
                       />
                     </div>
                   ) : (
-                    <div className="w-full h-48 bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+                    <div className="w-full h-48 bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center flex-shrink-0">
                     <span className="text-6xl">{post.icon || '📝'}</span>
                     </div>
                   )}
 
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     {/* Category */}
-                    <span className="inline-block px-3 py-1 text-xs font-semibold bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full mb-3">
+                    <span className="inline-block px-3 py-1 text-xs font-semibold bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full mb-3 w-fit">
                       {post.category}
                     </span>
 
@@ -61,12 +61,12 @@ export function Blog() {
                     </h3>
 
                     {/* Excerpt */}
-                    <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-3">
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-3 flex-grow">
                       {post.excerpt}
                     </p>
 
                     {/* Meta */}
-                    <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-500">
+                    <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-500 mt-auto">
                       <div className="flex items-center gap-4">
                         <span className="flex items-center gap-1">
                           <Calendar className="w-3 h-3" />

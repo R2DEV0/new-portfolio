@@ -21,8 +21,8 @@ export const blogPosts: BlogPost[] = [
     category: 'Electronics',
     icon: '⚡',
     images: [
-      '/blog/microcontrollers-setup.jpg',
-      '/blog/electronics-projects.jpg',
+      '/blog/pipico.jpg',
+      '/blog/xiao.jpg',
     ],
     content: `
 # Getting Started with Electronics and Microcontrollers
@@ -96,6 +96,109 @@ The journey into electronics has been incredibly fulfilling, and I'm excited to 
 - [MicroPython Documentation](https://docs.micropython.org/)
 
 Happy building! 🚀
+    `.trim(),
+  },
+  {
+    id: 'air-force-dispatch-leadership-lessons',
+    title: 'From Air Force Dispatch to Tech Leadership: Lessons in Management and Discipline',
+    excerpt: 'How my experience in Air Force dispatch operations shaped my approach to leadership, project management, and team communication in software development.',
+    date: '2024-02-10',
+    author: 'Kevin R. Chancey',
+    category: 'Leadership',
+    icon: '✈️',
+    images: [],
+    content: `
+# From Air Force Dispatch to Tech Leadership: Lessons in Management and Discipline
+
+My time in the Air Force working in dispatch operations was more than just a job—it was a foundational experience that continues to shape how I approach leadership, project management, and team communication in my software development career today.
+
+## The Dispatch Operations Environment
+
+Dispatch operations in the Air Force is a high-stakes environment where precision, clear communication, and rapid decision-making are not just valued—they're essential. Every day, we managed complex logistics, coordinated multiple moving parts, and ensured that critical operations ran smoothly under pressure.
+
+## Managing People Under Pressure
+
+One of the most valuable lessons I learned was how to manage people effectively, especially when stress levels are high and the stakes are significant. In dispatch operations, you're often coordinating with multiple teams, each with their own priorities and constraints.
+
+**Key Takeaways:**
+- **Clear Communication**: Ambiguity can lead to mistakes. I learned to be precise and direct in my communications, ensuring everyone understood their roles and responsibilities.
+- **Empathy and Understanding**: Recognizing that people perform better when they feel heard and valued. Taking time to understand team members' perspectives and challenges.
+- **Leading by Example**: You can't ask your team to maintain high standards if you don't hold yourself to the same standards. Discipline starts at the top.
+
+## Work Discipline, Morals, and Ethics
+
+The military instilled in me a strong sense of discipline, but more importantly, it taught me that discipline isn't about rigid rules—it's about doing the right thing, even when no one is watching.
+
+**Ethical Decision-Making:**
+- **Integrity First**: In dispatch operations, there's no room for cutting corners. This translated directly to my development work—writing clean, maintainable code and following best practices, even when deadlines are tight.
+- **Accountability**: Taking ownership of mistakes and learning from them rather than deflecting blame. This builds trust with teams and stakeholders.
+- **Service Before Self**: Understanding that the mission—or in tech terms, the project and team—comes before personal convenience. This mindset helps prioritize what truly matters.
+
+## Managing Tasks and Priorities
+
+Dispatch operations taught me to think in terms of systems and priorities. When multiple aircraft need coordination, fuel, maintenance, and crew assignments, you quickly learn to:
+
+**Prioritization Skills:**
+- **Critical Path Analysis**: Identifying what must happen first and what can wait. This directly translates to managing technical debt and feature development.
+- **Resource Allocation**: Understanding that people, time, and resources are finite. Making strategic decisions about where to invest effort.
+- **Risk Assessment**: Constantly evaluating what could go wrong and having contingency plans ready. In software, this means thinking about edge cases, error handling, and system resilience.
+
+## Communication: The Foundation of Everything
+
+Perhaps the most critical skill I developed was effective communication. In dispatch operations, a misunderstood instruction or unclear status update can have serious consequences.
+
+**Communication Principles I Still Use:**
+- **Active Listening**: Truly hearing what team members are saying, not just waiting for my turn to speak.
+- **Structured Briefings**: Whether it's a standup meeting or a project status update, I structure information clearly: situation, mission, execution, and support.
+- **Documentation**: Clear, concise documentation that others can follow. This applies to code comments, README files, and project documentation.
+- **Transparency**: Keeping stakeholders informed, especially when things don't go as planned. Bad news doesn't get better with time.
+
+## How It Affects My Work Today
+
+These experiences directly impact how I approach my role as a Senior Developer and team leader:
+
+### Leadership Style
+- **Servant Leadership**: I focus on removing obstacles for my team and providing the resources they need to succeed.
+- **Decisive Action**: When decisions need to be made, I make them based on available information rather than waiting for perfect clarity.
+- **Mentorship**: Just as I learned from experienced NCOs and officers, I now invest time in mentoring junior developers.
+
+### Project Management
+- **Agile Principles with Military Precision**: I combine the flexibility of agile methodologies with the discipline of structured planning.
+- **Risk Management**: I proactively identify potential project risks and develop mitigation strategies.
+- **Resource Planning**: Understanding team capacity and planning accordingly, avoiding burnout and ensuring sustainable pace.
+
+### Communication in Tech
+- **Code Reviews**: I provide constructive, clear feedback that helps developers grow.
+- **Technical Documentation**: I write documentation that others can actually use, not just documentation that exists.
+- **Stakeholder Updates**: I translate technical complexity into business language that stakeholders can understand and act upon.
+
+## The Bridge Between Military and Tech
+
+Many people don't immediately see the connection between military operations and software development, but the parallels are striking:
+
+- **Mission-Critical Systems**: Both require reliability and precision
+- **Team Coordination**: Both involve managing multiple people and resources
+- **Problem-Solving Under Pressure**: Both require clear thinking when things go wrong
+- **Continuous Improvement**: Both value learning from experience and adapting
+
+## Lessons for Other Developers
+
+If you're transitioning from military service to tech, or if you're looking to develop leadership skills:
+
+1. **Your military experience is valuable**: The discipline, work ethic, and leadership skills you developed are assets, not just resume fillers.
+2. **Communication is universal**: The communication skills you learned apply directly to code reviews, documentation, and team collaboration.
+3. **Ethics matter**: In an industry where shortcuts can be tempting, maintaining high ethical standards sets you apart.
+4. **Mentorship works both ways**: You have valuable experience to share, but you can also learn from those with different backgrounds.
+
+## Conclusion
+
+My Air Force experience in dispatch operations wasn't just a chapter in my career—it's a foundation that continues to inform how I lead teams, manage projects, and communicate with stakeholders. The discipline, ethics, and leadership skills I developed there are just as relevant in a code review or sprint planning meeting as they were in coordinating flight operations.
+
+The military taught me that leadership isn't about rank or title—it's about taking responsibility, making decisions, and supporting your team to accomplish the mission. Those principles serve me well every day in software development.
+
+**Service to Country, Service to Code**—the values are the same, just applied in different domains.
+
+*If you're a veteran in tech or considering the transition, I'd love to hear about your experiences. The skills we learned in service are more valuable than we sometimes realize.*
     `.trim(),
   },
 ]
