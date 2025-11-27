@@ -89,52 +89,82 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
           <div
             className="blog-content text-gray-700 dark:text-gray-300 leading-relaxed"
             dangerouslySetInnerHTML={{
-              __html: post.content
-                .split('\n')
-                .map((line, index, array) => {
+              __html: (() => {
+                const lines = post.content.split('\n')
+                let html = ''
+                let inList = false
+                
+                const processInlineMarkdown = (text: string): string => {
+                  // Convert markdown links
+                  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
+                  // Convert bold text
+                  text = text.replace(/\*\*([^*]+)\*\*/g, '<strong class="font-semibold text-gray-900 dark:text-gray-100">$1</strong>')
+                  return text
+                }
+                
+                for (let i = 0; i < lines.length; i++) {
+                  const line = lines[i]
                   const trimmed = line.trim()
                   
-                  // Convert markdown-style headers to HTML
+                  // Headers
                   if (trimmed.startsWith('# ')) {
-                    return `<h1 class="text-4xl font-bold mb-6 mt-8 text-gray-900 dark:text-gray-100">${trimmed.substring(2)}</h1>`
+                    if (inList) { html += '</ul>'; inList = false }
+                    html += `<h1 class="text-4xl font-bold mb-6 mt-8 text-gray-900 dark:text-gray-100">${processInlineMarkdown(trimmed.substring(2))}</h1>`
+                    continue
                   }
                   if (trimmed.startsWith('## ')) {
-                    return `<h2 class="text-3xl font-bold mb-4 mt-6 text-gray-900 dark:text-gray-100">${trimmed.substring(3)}</h2>`
+                    if (inList) { html += '</ul>'; inList = false }
+                    html += `<h2 class="text-3xl font-bold mb-4 mt-6 text-gray-900 dark:text-gray-100">${processInlineMarkdown(trimmed.substring(3))}</h2>`
+                    continue
                   }
                   if (trimmed.startsWith('### ')) {
-                    return `<h3 class="text-2xl font-semibold mb-3 mt-5 text-gray-900 dark:text-gray-100">${trimmed.substring(4)}</h3>`
+                    if (inList) { html += '</ul>'; inList = false }
+                    html += `<h3 class="text-2xl font-semibold mb-3 mt-5 text-gray-900 dark:text-gray-100">${processInlineMarkdown(trimmed.substring(4))}</h3>`
+                    continue
                   }
                   
-                  // Handle unordered lists
+                  // List items
                   if (trimmed.startsWith('- ')) {
-                    const isFirstItem = index === 0 || array[index - 1].trim() === '' || !array[index - 1].trim().startsWith('- ')
-                    const isLastItem = index === array.length - 1 || array[index + 1].trim() === '' || !array[index + 1].trim().startsWith('- ')
-                    let html = ''
-                    if (isFirstItem) html += '<ul class="list-disc list-inside mb-4 space-y-2 ml-4">'
-                    html += `<li>${trimmed.substring(2)}</li>`
-                    if (isLastItem) html += '</ul>'
-                    return html
+                    if (!inList) {
+                      html += '<ul class="list-disc list-inside mb-4 space-y-2 ml-4">'
+                      inList = true
+                    }
+                    const listContent = trimmed.substring(2)
+                    html += `<li>${processInlineMarkdown(listContent)}</li>`
+                    continue
                   }
                   
-                  // Handle bold text (inline)
-                  if (trimmed.startsWith('**') && trimmed.endsWith('**') && trimmed.length > 4) {
-                    return `<p class="font-semibold text-gray-900 dark:text-gray-100 mb-4">${trimmed.substring(2, trimmed.length - 2)}</p>`
-                  }
-                  
+                  // Empty lines
                   if (trimmed === '') {
-                    return '<br />'
+                    if (inList) {
+                      html += '</ul>'
+                      inList = false
+                    }
+                    html += '<br />'
+                    continue
                   }
                   
-                  // Convert markdown links
-                  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
-                  let processedLine = trimmed.replace(linkRegex, '<a href="$2" class="text-blue-600 dark:text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>')
+                  // Regular paragraphs
+                  if (inList) {
+                    html += '</ul>'
+                    inList = false
+                  }
                   
-                  // Handle inline bold
-                  processedLine = processedLine.replace(/\*\*([^*]+)\*\*/g, '<strong class="font-semibold">$1</strong>')
-                  
-                  return `<p class="mb-4">${processedLine}</p>`
-                })
-                .join(''),
+                  // Check if it's a standalone bold paragraph
+                  if (trimmed.startsWith('**') && trimmed.endsWith('**') && trimmed.length > 4 && !trimmed.includes('\n')) {
+                    html += `<p class="font-semibold text-gray-900 dark:text-gray-100 mb-4">${processInlineMarkdown(trimmed.substring(2, trimmed.length - 2))}</p>`
+                  } else {
+                    html += `<p class="mb-4">${processInlineMarkdown(trimmed)}</p>`
+                  }
+                }
+                
+                // Close any open list
+                if (inList) {
+                  html += '</ul>'
+                }
+                
+                return html
+              })(),
             }}
           />
         </div>
