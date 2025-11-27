@@ -10,7 +10,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Kevin R. Chancey</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Kevin Chancey</h3>
             <p className="text-gray-400">
               Senior Full-Stack Developer passionate about creating innovative digital experiences.
             </p>
@@ -96,7 +96,7 @@ export function Footer() {
         </div>
         
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} Kevin R. Chancey. All rights reserved.</p>
+          <p>&copy; {currentYear} KevTech.net | Kevin Chancey. All rights reserved.</p>
         </div>
       </div>
     </footer>
