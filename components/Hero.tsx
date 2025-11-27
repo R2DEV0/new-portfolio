@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, FileText, Instagram, Facebook } from 'lucide-react'
+import { Github, Linkedin, FileText, Instagram, Facebook, ExternalLink } from 'lucide-react'
 
 export function Hero() {
   return (
@@ -13,7 +13,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent pb-2">
-            Kevin R. Chancey
+            Kevin Chancey
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-3 sm:mb-4">
             Senior Full-Stack Developer
@@ -60,6 +60,15 @@ export function Hero() {
             >
               <Facebook className="w-5 h-5" />
             </a>
+            <a
+              href="https://kevtech.net/KevinChanceyResume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Resume"
+            >
+              <FileText className="w-5 h-5" />
+            </a>
           </div>
 
           <motion.div
@@ -73,15 +82,6 @@ export function Hero() {
               className="px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105"
             >
               View My Work
-            </a>
-            <a
-              href="/KevinChanceyResume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base border-2 border-gray-300 dark:border-gray-700 rounded-full font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-all flex items-center gap-2"
-            >
-              <FileText className="w-4 h-4" />
-              View Resume
             </a>
             <a
               href="#about"

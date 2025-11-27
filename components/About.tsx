@@ -49,8 +49,8 @@ export function About() {
             <div className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
               <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Contact</h3>
               <div className="space-y-2 text-gray-700 dark:text-gray-300">
-                <p><strong>Phone:</strong> (206) 519-4870</p>
-                <p><strong>Resume:</strong> <a href="https://kevtech.net/KevinChanceyResume.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Download PDF</a></p>
+                <p><strong>Email Me:</strong> <a href="mailto:r2devo@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">r2devo@gmail.com</a></p>
+                <p><strong>My Resume:</strong> <a href="https://kevtech.net/KevinChanceyResume.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Download PDF</a></p>
               </div>
             </div>
           </div>
