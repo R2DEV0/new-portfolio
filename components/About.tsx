@@ -32,6 +32,14 @@ export function About() {
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">
+              At <strong>AREA15</strong>, I've created impactful revenue-generating solutions. I developed an 
+              easy-to-use locker rental kiosk system that generates an extra <strong>$20,000 per month</strong> in 
+              revenue, creating a new revenue stream for the venue. Additionally, my ticketing kiosks interact with 
+              over <strong>50,000 visitors per week</strong>, significantly contributing to ticket sales and 
+              enhancing the overall visitor experience.
+            </p>
+            
+            <p className="text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">
               With experience at <strong>Strategy9</strong> and <strong>J Taylor Education</strong>, I've 
               developed solutions that have reduced operational time by 40%, improved platform speed by 25%, 
               and maintained 99.9% uptime. I'm AWS certified and hold dual degrees in Computer Science and 
