@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Kevin R. Chancey | Full-Stack Developer',
+  title: 'Kevin Chancey | Full-Stack Developer',
   description: 'Portfolio of Kevin R. Chancey - Senior Developer specializing in MERN stack, React, Next.js, and AWS',
   keywords: ['developer', 'full-stack', 'react', 'next.js', 'aws', 'portfolio'],
 }

@@ -9,6 +9,7 @@ export const skills: Skill[] = [
   { name: 'React', level: 98, category: 'frontend' },
   { name: 'Next.js', level: 95, category: 'frontend' },
   { name: 'JavaScript/TypeScript', level: 98, category: 'frontend' },
+  { name: 'jQuery', level: 85, category: 'frontend' },
   { name: 'HTML/CSS', level: 100, category: 'frontend' },
   { name: 'Tailwind CSS', level: 95, category: 'frontend' },
   { name: 'Bootstrap CSS', level: 98, category: 'frontend' },
@@ -22,20 +23,25 @@ export const skills: Skill[] = [
   { name: 'ASP.NET Core', level: 85, category: 'backend' },
   { name: 'PHP', level: 80, category: 'backend' },
   { name: 'Python', level: 75, category: 'backend' },
+  { name: 'Custom API Development', level: 100, category: 'backend' },
   
   // Tools & Platforms
   { name: 'WordPress', level: 90, category: 'tools' },
-  { name: 'Git/GitHub', level: 90, category: 'tools' },
+  { name: 'Git/GitHub/Bitbucket', level: 90, category: 'tools' },
+  { name: 'Figma', level: 80, category: 'tools' },
   { name: 'CI/CD', level: 85, category: 'tools' },
-  { name: 'Stripe API', level: 90, category: 'tools' },
-  { name: 'Square API', level: 85, category: 'tools' },
+  { name: 'Stripe API', level: 95, category: 'tools' },
+  { name: 'Square API', level: 95, category: 'tools' },
   { name: 'HubSpot API', level: 100, category: 'tools' },
+  { name: 'API Integration', level: 98, category: 'tools' },
   
   // Cloud
   { name: 'AWS', level: 90, category: 'cloud' },
   { name: 'Netlify', level: 85, category: 'cloud' },
   { name: 'Azure', level: 70, category: 'cloud' },
   { name: 'Docker', level: 80, category: 'cloud' },
+  { name: 'Pantheon', level: 90, category: 'cloud' },
+  { name: 'Cloudflare', level: 85, category: 'cloud' },
   
   // Management
   { name: 'Project Management', level: 95, category: 'management' },
@@ -46,7 +52,8 @@ export const skills: Skill[] = [
   { name: 'Decision Making', level: 95, category: 'management' },
 
   // Other
-  { name: 'AI Integration', level: 75, category: 'other' },
+  { name: 'AI Integration', level: 95, category: 'other' },
+  { name: 'AI Prompting', level: 95, category: 'other' },
   { name: 'Android Development', level: 70, category: 'other' },
   { name: 'Serverless Architecture', level: 75, category: 'other' },
   { name: 'Physical Checkout Readers', level: 80, category: 'other' },
