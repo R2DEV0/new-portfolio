@@ -250,14 +250,9 @@ export function Navbar() {
                 transition={{ duration: 0.4, delay: 0.5 }}
                 className="absolute bottom-8 left-8 right-8"
               >
-                <div className="flex justify-between items-end text-xs text-zinc-400 dark:text-zinc-500">
-                  <div>
-                    <div className="font-mono mb-1">kevtech.net</div>
-                    <div className="text-[10px] uppercase tracking-widest">Full-Stack Developer</div>
-                  </div>
-                  <div className="text-right font-mono">
-                    <div>Las Vegas, NV</div>
-                  </div>
+                <div className="text-xs text-zinc-400 dark:text-zinc-500">
+                  <div className="font-mono mb-1">kevtech.net</div>
+                  <div className="text-[10px] uppercase tracking-widest">Full-Stack Developer</div>
                 </div>
               </motion.div>
             </div>
