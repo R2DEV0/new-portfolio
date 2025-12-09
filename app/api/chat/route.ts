@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import OpenAI from 'openai'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
-
 // Kevin's information for context
 const kevinContext = `
 You are an AI assistant helping visitors learn about Kevin R. Chancey, a Senior Full-Stack Developer.
@@ -36,6 +32,10 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    })
 
     const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
       {

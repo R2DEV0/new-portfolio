@@ -1,9 +1,18 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Space_Grotesk, Libre_Baskerville } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 
-const inter = Inter({ subsets: ['latin'] })
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ['latin'],
+  variable: '--font-space',
+})
+
+const libreBaskerville = Libre_Baskerville({ 
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-libre',
+})
 
 export const metadata: Metadata = {
   title: 'Kevin Chancey | Full-Stack Developer',
@@ -18,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${spaceGrotesk.variable} ${libreBaskerville.variable} font-sans`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>

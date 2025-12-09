@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from './ThemeProvider'
 import { Sun, Moon } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 interface ThemeToggleProps {
   className?: string
@@ -20,31 +21,36 @@ export function ThemeToggle({ className = '', mobile = false }: ThemeToggleProps
   if (!mounted) {
     return (
       <button
-        className={`p-2 rounded-md text-gray-700 dark:text-gray-300 ${className}`}
+        className={`p-2 rounded-lg text-zinc-500 ${className}`}
         aria-label="Toggle theme"
         disabled
       >
-        <Sun className="w-5 h-5" />
+        <Sun className="w-4 h-4" />
       </button>
     )
   }
 
-  const baseClasses = mobile
-    ? `p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ${className}`
-    : `fixed top-6 right-6 z-50 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700 ${className}`
-
   return (
-    <button
+    <motion.button
       onClick={toggleTheme}
-      className={baseClasses}
+      className={`relative p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200 ${className}`}
       aria-label="Toggle theme"
+      whileTap={{ scale: 0.95 }}
     >
-      {theme === 'light' ? (
-        <Moon className="w-5 h-5 text-gray-800 dark:text-gray-200" />
-      ) : (
-        <Sun className="w-5 h-5 text-gray-800 dark:text-gray-200" />
-      )}
-    </button>
+      <motion.div
+        initial={false}
+        animate={{ 
+          rotate: theme === 'dark' ? 180 : 0,
+          scale: 1
+        }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {theme === 'light' ? (
+          <Moon className="w-4 h-4" />
+        ) : (
+          <Sun className="w-4 h-4" />
+        )}
+      </motion.div>
+    </motion.button>
   )
 }
-
