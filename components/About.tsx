@@ -21,7 +21,9 @@ export function About() {
               I'm a Senior Full-Stack Developer with a passion for creating innovative digital experiences 
               and scalable solutions. Currently working remotely at <strong>AREA15</strong> in Las Vegas, I've been 
               at the forefront of managing, enhancing, and constructing diverse projects for entertainment 
-              and sales-focused applications.
+              and sales-focused applications. I leverage cutting-edge AI development tools including <strong>Cursor</strong>, 
+              <strong>Claude Code</strong>, and <strong>Claude CoWork</strong> daily to accelerate development and deliver 
+              high-quality solutions.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">
@@ -42,15 +44,16 @@ export function About() {
             <p className="text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">
               With experience at <strong>Strategy9</strong> and <strong>J Taylor Education</strong>, I've 
               developed solutions that have reduced operational time by 40%, improved platform speed by 25%, 
-              and maintained 99.9% uptime. I'm AWS certified and hold dual degrees in Computer Science and 
-              Business Administration from City University of Seattle.
+              and maintained 99.9% uptime. I integrated <strong>ChatGPT</strong> into my development workflow 
+              at both companies, leveraging AI to enhance productivity and streamline complex problem-solving. 
+              I'm AWS certified and hold dual degrees in Computer Science and Business Administration from City University of Seattle.
             </p>
             
             <div className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
               <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Contact</h3>
               <div className="space-y-2 text-gray-700 dark:text-gray-300">
                 <p><strong>Email Me:</strong> <a href="mailto:r2devo@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">r2devo@gmail.com</a></p>
-                <p><strong>My Resume:</strong> <a href="https://kevtech.net/KevinChanceyResume.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Download PDF</a></p>
+                <p><strong>My Resume:</strong> <a href="https://kevtech.net/KevinChanceyResume1.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Download PDF</a></p>
               </div>
             </div>
           </div>

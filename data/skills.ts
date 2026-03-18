@@ -54,6 +54,10 @@ export const skills: Skill[] = [
   // Other
   { name: 'AI Integration', level: 95, category: 'other' },
   { name: 'AI Prompting', level: 95, category: 'other' },
+  { name: 'ChatGPT', level: 95, category: 'other' },
+  { name: 'Cursor', level: 98, category: 'other' },
+  { name: 'Claude Code', level: 98, category: 'other' },
+  { name: 'Claude CoWork', level: 95, category: 'other' },
   { name: 'Android Development', level: 70, category: 'other' },
   { name: 'Serverless Architecture', level: 75, category: 'other' },
   { name: 'Physical Checkout Readers', level: 80, category: 'other' },

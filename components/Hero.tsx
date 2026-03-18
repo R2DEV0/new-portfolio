@@ -19,7 +19,7 @@ export function Hero() {
             Senior Full-Stack Developer
           </p>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
-            Crafting innovative digital experiences with MERN, React, Next.js, AWS, and more.
+            Crafting innovative digital experiences with MERN, React, Next.js, AWS, and AI-powered development tools.
             Passionate about building scalable solutions and immersive user experiences.
           </p>
           
@@ -61,7 +61,7 @@ export function Hero() {
               <Facebook className="w-5 h-5" />
             </a>
             <a
-              href="https://kevtech.net/KevinChanceyResume.pdf"
+              href="https://kevtech.net/KevinChanceyResume1.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"

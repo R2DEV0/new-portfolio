@@ -15,11 +15,12 @@ export const projects: Project[] = [
     company: 'AREA15',
     period: '2023 - Present',
     description: 'Designed and implemented Android-based ticketing kiosks integrated with Stripe payment processing, serving over 8,500 customers daily.',
-    technologies: ['Android', 'React', 'Stripe API', 'Node.js', 'Express.js'],
+    technologies: ['Android', 'React', 'Stripe API', 'Node.js', 'Express.js', 'Cursor', 'Claude Code', 'Claude CoWork'],
     highlights: [
       '15% increase in ticket sales',
       'Enhanced user experience for high-volume traffic',
-      'Seamless payment processing integration'
+      'Seamless payment processing integration',
+      'AI-powered development with Cursor, Claude Code, and Claude CoWork'
     ],
   },
   {
@@ -28,11 +29,12 @@ export const projects: Project[] = [
     period: '2023 - Present',
     github: 'https://github.com/R2DEV0/area15_origin_quest',
     description: 'Developed engaging interactive games using MERN stack (MongoDB, Express.js, React, Next.js) with AI integration for captivating digital experiences.',
-    technologies: ['MongoDB', 'Express.js', 'React', 'Next.js', 'AI Integration', 'Node.js'],
+    technologies: ['MongoDB', 'Express.js', 'React', 'Next.js', 'AI Integration', 'Node.js', 'Cursor', 'Claude Code', 'Claude CoWork'],
     highlights: [
       'Interactive and engaging user experiences',
       'AI-powered game mechanics',
-      'Scalable MERN architecture'
+      'Scalable MERN architecture',
+      'Built with AI development tools: Cursor, Claude Code, and Claude CoWork'
     ],
   },
   {
@@ -40,11 +42,12 @@ export const projects: Project[] = [
     company: 'Strategy9',
     period: '2021 - 2024',
     description: 'Created an advanced SMS-based valet system with queue management, reducing valet management time by 40%.',
-    technologies: ['C#', 'ASP.NET Core', 'SMS API', 'SQL Server'],
+    technologies: ['C#', 'ASP.NET Core', 'SMS API', 'SQL Server', 'ChatGPT'],
     highlights: [
       '40% reduction in valet management time',
       'Advanced queue management system',
-      'Real-time SMS notifications'
+      'Real-time SMS notifications',
+      'AI-assisted development with ChatGPT'
     ],
   },
   {
@@ -52,11 +55,12 @@ export const projects: Project[] = [
     company: 'AREA15',
     period: '2023 - Present',
     description: 'Built a comprehensive food ordering kiosk system utilizing Square ordering and payment system on Android/React platform.',
-    technologies: ['Android', 'React', 'Square API', 'Node.js'],
+    technologies: ['Android', 'React', 'Square API', 'Node.js', 'Cursor', 'Claude Code', 'Claude CoWork'],
     highlights: [
       'Multi-location support',
       'Integrated payment processing',
-      'User-friendly interface'
+      'User-friendly interface',
+      'AI-accelerated development with Cursor, Claude Code, and Claude CoWork'
     ],
   },
   {
@@ -65,11 +69,12 @@ export const projects: Project[] = [
     period: '2019 - 2024',
     github: 'https://github.com/R2DEV0/Depth-Complexity-Plugin',
     description: 'Led development of a robust virtual education platform with 99.9% uptime, improving platform speed by 25% using MERN stack.',
-    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'AWS', 'PHP', 'WordPress'],
+    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'AWS', 'PHP', 'WordPress', 'ChatGPT'],
     highlights: [
       '99.9% uptime achievement',
       '25% improvement in platform speed',
-      'Scalable infrastructure on AWS'
+      'Scalable infrastructure on AWS',
+      'AI-enhanced development workflow with ChatGPT'
     ],
   },
   {
@@ -90,11 +95,12 @@ export const projects: Project[] = [
     company: 'Strategy9',
     period: '2021 - 2024',
     description: 'Built comprehensive email and SMS marketing system for casino industry, handling 800,000+ monthly emails with compliance standards.',
-    technologies: ['C#', 'ASP.NET Core', 'Email API', 'SMS API', 'SQL Server'],
+    technologies: ['C#', 'ASP.NET Core', 'Email API', 'SMS API', 'SQL Server', 'ChatGPT'],
     highlights: [
       '800,000+ monthly emails processed',
       'Compliance standards maintained',
-      'Engaging contests and promotions'
+      'Engaging contests and promotions',
+      'AI-enhanced development with ChatGPT'
     ],
   },
   {
@@ -102,11 +108,12 @@ export const projects: Project[] = [
     company: 'AREA15',
     period: '2023 - Present',
     description: 'Crafted custom WordPress plugins with PHP and React, improving platform functionality and user interface.',
-    technologies: ['PHP', 'React', 'WordPress', 'JavaScript'],
+    technologies: ['PHP', 'React', 'WordPress', 'JavaScript', 'Cursor', 'Claude Code', 'Claude CoWork'],
     highlights: [
       'Enhanced platform functionality',
       'Improved user interface',
-      'Seamless WordPress integration'
+      'Seamless WordPress integration',
+      'Developed using AI tools: Cursor, Claude Code, and Claude CoWork'
     ],
   },
   {
@@ -115,11 +122,12 @@ export const projects: Project[] = [
     period: '2023 - Present',
     github: 'https://github.com/R2DEV0/lockers',
     description: 'Developed a comprehensive locker rental system for venue management, enabling seamless customer self-service and automated locker assignments.',
-    technologies: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Payment API'],
+    technologies: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Payment API', 'Cursor', 'Claude Code', 'Claude CoWork'],
     highlights: [
       'Streamlined customer experience',
       'Automated locker management',
-      'Integrated payment processing'
+      'Integrated payment processing',
+      'Built with AI development tools: Cursor, Claude Code, and Claude CoWork'
     ],
   },
   {
@@ -128,11 +136,12 @@ export const projects: Project[] = [
     period: '2023 - Present',
     github: 'https://github.com/R2DEV0/destabilizer',
     description: 'Created an immersive interactive experience using cutting-edge technology to deliver engaging and memorable visitor interactions.',
-    technologies: ['React', 'Next.js', 'MERN Stack', 'Interactive Media', 'Node.js'],
+    technologies: ['React', 'Next.js', 'MERN Stack', 'Interactive Media', 'Node.js', 'Cursor', 'Claude Code', 'Claude CoWork'],
     highlights: [
       'Immersive user experience',
       'Interactive technology integration',
-      'Engaging visitor interactions'
+      'Engaging visitor interactions',
+      'AI-powered development with Cursor, Claude Code, and Claude CoWork'
     ],
   },
 ]

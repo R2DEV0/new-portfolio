@@ -35,7 +35,7 @@ export function Footer() {
                 <a href="#blog" className="hover:text-blue-400 transition-colors">Blog</a>
               </li>
               <li>
-                <a href="/KevinChanceyResume.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors flex items-center gap-2">
+                <a href="/KevinChanceyResume1.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors flex items-center gap-2">
                   <FileText className="w-4 h-4" />
                   Resume
                 </a>
@@ -83,7 +83,7 @@ export function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="/KevinChanceyResume.pdf"
+                href="/KevinChanceyResume1.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
