@@ -1,111 +1,256 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { projects } from '@/data/projects'
-import { ExternalLink, Code, Github } from 'lucide-react'
+import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react'
+
+const companyColors: Record<string, { color: string; bg: string; border: string }> = {
+  'AREA15': {
+    color: '#6366f1',
+    bg: 'rgba(99,102,241,0.08)',
+    border: 'rgba(99,102,241,0.25)',
+  },
+  'Strategy9': {
+    color: '#8b5cf6',
+    bg: 'rgba(139,92,246,0.08)',
+    border: 'rgba(139,92,246,0.25)',
+  },
+  'J Taylor Education': {
+    color: '#22d3ee',
+    bg: 'rgba(34,211,238,0.08)',
+    border: 'rgba(34,211,238,0.25)',
+  },
+}
+
+const defaultStyle = {
+  color: '#6366f1',
+  bg: 'rgba(99,102,241,0.08)',
+  border: 'rgba(99,102,241,0.25)',
+}
+
+function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+  const [expanded, setExpanded] = useState(false)
+  const style = (project.company ? companyColors[project.company] : null) || defaultStyle
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ delay: index * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative rounded-2xl overflow-hidden glow-card transition-all duration-300"
+      style={{
+        background: 'var(--bg-card)',
+        border: '1px solid var(--border)',
+      }}
+      onMouseEnter={e => {
+        const el = e.currentTarget as HTMLElement
+        el.style.borderColor = style.border
+        el.style.boxShadow = `0 0 30px ${style.color}20, 0 8px 40px rgba(0,0,0,0.4)`
+        el.style.transform = 'translateY(-2px)'
+      }}
+      onMouseLeave={e => {
+        const el = e.currentTarget as HTMLElement
+        el.style.borderColor = 'var(--border)'
+        el.style.boxShadow = ''
+        el.style.transform = 'translateY(0)'
+      }}
+    >
+      {/* Top accent bar */}
+      <div
+        className="h-[2px] w-full"
+        style={{ background: `linear-gradient(90deg, ${style.color}, transparent)` }}
+      />
+
+      <div className="p-6">
+        {/* Header row */}
+        <div className="flex items-start justify-between gap-4 mb-3">
+          <div className="flex-1 min-w-0">
+            {project.company && (
+              <span
+                className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-2"
+                style={{ background: style.bg, color: style.color, border: `1px solid ${style.border}` }}
+              >
+                {project.company}
+              </span>
+            )}
+            <h3 className="text-base font-semibold leading-tight" style={{ color: 'var(--text-primary)' }}>
+              {project.title}
+            </h3>
+            {project.period && (
+              <p className="text-xs mt-1 font-mono" style={{ color: 'var(--text-muted)' }}>
+                {project.period}
+              </p>
+            )}
+          </div>
+
+          {/* Links */}
+          <div className="flex gap-1.5 flex-shrink-0">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg transition-all duration-200"
+                style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
+                aria-label="GitHub"
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.borderColor = style.border
+                  ;(e.currentTarget as HTMLElement).style.color = style.color
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'
+                  ;(e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)'
+                }}
+              >
+                <Github className="w-4 h-4" style={{ color: 'inherit' }} />
+              </a>
+            )}
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg transition-all duration-200"
+                style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
+                aria-label="Live project"
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.borderColor = style.border
+                  ;(e.currentTarget as HTMLElement).style.color = style.color
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'
+                  ;(e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)'
+                }}
+              >
+                <ExternalLink className="w-4 h-4" style={{ color: 'inherit' }} />
+              </a>
+            )}
+          </div>
+        </div>
+
+        {/* Description */}
+        <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
+          {project.description}
+        </p>
+
+        {/* Highlights toggle */}
+        <AnimatePresence>
+          {expanded && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="overflow-hidden"
+            >
+              <ul className="space-y-1.5 mb-4">
+                {project.highlights.map((h, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
+                    <span style={{ color: style.color }} className="flex-shrink-0 mt-0.5">▸</span>
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Tech tags */}
+        <div className="flex flex-wrap gap-1.5 mb-3">
+          {project.technologies.slice(0, expanded ? undefined : 4).map(tech => (
+            <span
+              key={tech}
+              className="text-xs px-2 py-0.5 rounded-md font-medium"
+              style={{
+                background: style.bg,
+                color: style.color,
+                border: `1px solid ${style.border}`,
+              }}
+            >
+              {tech}
+            </span>
+          ))}
+          {!expanded && project.technologies.length > 4 && (
+            <span className="text-xs px-2 py-0.5 rounded-md" style={{ color: 'var(--text-muted)' }}>
+              +{project.technologies.length - 4} more
+            </span>
+          )}
+        </div>
+
+        {/* Expand button */}
+        <button
+          onClick={() => setExpanded(v => !v)}
+          className="flex items-center gap-1 text-xs font-medium transition-colors duration-200"
+          style={{ color: expanded ? style.color : 'var(--text-muted)' }}
+          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = style.color }}
+          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = expanded ? style.color : 'var(--text-muted)' }}
+        >
+          {expanded ? (
+            <><ChevronUp className="w-3.5 h-3.5" /> Show less</>
+          ) : (
+            <><ChevronDown className="w-3.5 h-3.5" /> View highlights</>
+          )}
+        </button>
+      </div>
+    </motion.div>
+  )
+}
 
 export function Projects() {
   return (
-    <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-20 md:py-28 px-4 sm:px-6 relative overflow-hidden">
+      {/* Ambient glow */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        style={{
+          width: '800px', height: '800px',
+          background: 'radial-gradient(circle, rgba(99,102,241,0.04) 0%, transparent 70%)',
+        }}
+      />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          className="text-center mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent pb-2">
-            Featured Projects
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all hover:scale-[1.02]"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Code className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                        {project.title}
-                      </h3>
-                    </div>
-                    {project.company && (
-                      <p className="text-sm text-blue-600 dark:text-blue-400 font-medium mb-1">
-                        {project.company}
-                      </p>
-                    )}
-                    {project.period && (
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        {project.period}
-                      </p>
-                    )}
-                  </div>
-                  <div className="flex gap-2">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors"
-                        aria-label="View GitHub repository"
-                        title="View on GitHub"
-                      >
-                        <Github className="w-4 h-4 text-gray-600 dark:text-gray-400" />
-                      </a>
-                    )}
-                    {project.link && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded transition-colors"
-                        aria-label="View project"
-                        title="View live project"
-                      >
-                        <ExternalLink className="w-4 h-4 text-gray-600 dark:text-gray-400" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  {project.description}
-                </p>
-
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                    Key Highlights:
-                  </h4>
-                  <ul className="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300">
-                    {project.highlights.map((highlight, i) => (
-                      <li key={i}>{highlight}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <p className="section-label mb-3">Portfolio</p>
+          <h2 className="text-4xl sm:text-5xl font-bold gradient-text pb-2">Featured Projects</h2>
+          <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
+            {projects.length} production projects across 3 companies
+          </p>
         </motion.div>
+
+        {/* Company legend */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-3 mb-10"
+        >
+          {Object.entries(companyColors).map(([company, style]) => (
+            <div
+              key={company}
+              className="flex items-center gap-2 text-xs px-3 py-1.5 rounded-full"
+              style={{ background: style.bg, border: `1px solid ${style.border}`, color: style.color }}
+            >
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: style.color }} />
+              {company}
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Grid */}
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+          {projects.map((project, i) => (
+            <ProjectCard key={project.title} project={project} index={i} />
+          ))}
+        </div>
       </div>
     </section>
   )
 }
-
