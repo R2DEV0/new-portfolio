@@ -16,7 +16,7 @@ const stats: StatItem[] = [
   { value: 50, suffix: 'K+', label: 'Weekly Visitors Served', color: '#6366f1' },
   { value: 20, suffix: 'K+', prefix: '$', label: 'Monthly Revenue Generated', color: '#8b5cf6' },
   { value: 99.9, suffix: '%', label: 'Platform Uptime', color: '#22d3ee' },
-  { value: 6, suffix: '+', label: 'Years of Experience', color: '#10b981' },
+  { value: 7, suffix: '+', label: 'Years of Experience', color: '#10b981' },
 ]
 
 function CountUp({ target, suffix, prefix = '', color }: { target: number; suffix: string; prefix?: string; color: string }) {
@@ -50,7 +50,7 @@ const workHistory = [
     company: 'AREA15',
     role: 'Senior Full-Stack Developer',
     period: '2023 – Present',
-    location: 'Las Vegas, NV (Remote)',
+    location: 'Vancouver, WA (Remote)',
     color: '#6366f1',
     highlights: [
       'Built Android kiosk ticketing system serving 50K+ weekly visitors',
@@ -148,7 +148,7 @@ export function About() {
             <div className="space-y-4 text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               <p>
                 I'm a <strong style={{ color: 'var(--text-primary)' }}>Senior Full-Stack Developer</strong> currently
-                at <strong style={{ color: '#6366f1' }}>AREA15</strong> in Las Vegas, building revenue-generating
+                at <strong style={{ color: '#6366f1' }}>AREA15</strong> in Las Vegas (working remotely from Vancouver, WA), building revenue-generating
                 entertainment and kiosk systems that interact with tens of thousands of visitors every week.
               </p>
               <p>
@@ -171,7 +171,7 @@ export function About() {
             >
               <div className="flex items-center gap-2 mb-3">
                 <MapPin className="w-4 h-4" style={{ color: '#6366f1' }} />
-                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Las Vegas, NV (Remote Available)</span>
+                <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Vancouver, WA (Remote Available)</span>
               </div>
               <div className="flex flex-wrap gap-3">
                 <a
