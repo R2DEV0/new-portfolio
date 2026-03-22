@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Space_Grotesk, Libre_Baskerville } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { CustomCursor } from '@/components/CustomCursor'
 
 const spaceGrotesk = Space_Grotesk({ 
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${spaceGrotesk.variable} ${libreBaskerville.variable} font-sans`}>
         <ThemeProvider>
+          <CustomCursor />
           {children}
         </ThemeProvider>
       </body>

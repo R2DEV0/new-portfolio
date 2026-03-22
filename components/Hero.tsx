@@ -320,7 +320,7 @@ export function Hero() {
           className="flex flex-wrap justify-center gap-3 mb-10"
         >
           <a
-            href="#projects"
+            href="/#projects"
             className="group relative px-7 py-3 rounded-full font-semibold text-white overflow-hidden transition-all duration-300"
             style={{
               background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
@@ -335,7 +335,7 @@ export function Hero() {
           </a>
 
           <a
-            href="#about"
+            href="/#about"
             className="px-7 py-3 rounded-full font-semibold transition-all duration-300"
             style={{
               background: 'var(--bg-card)',

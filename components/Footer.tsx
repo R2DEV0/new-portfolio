@@ -4,11 +4,11 @@ import { Github, Linkedin, FileText, Instagram, Facebook, ArrowUp, Mail } from '
 import { motion } from 'framer-motion'
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Education', href: '#education' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Blog', href: '#blog' },
+  { label: 'About', href: '/#about' },
+  { label: 'Skills', href: '/#skills' },
+  { label: 'Education', href: '/#education' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Blog', href: '/#blog' },
 ]
 
 const social = [

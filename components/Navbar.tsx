@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ThemeToggle } from './ThemeToggle'
 
 const navItems = [
-  { name: 'About', href: '#about', number: '01' },
-  { name: 'Skills', href: '#skills', number: '02' },
-  { name: 'Education', href: '#education', number: '03' },
-  { name: 'Projects', href: '#projects', number: '04' },
-  { name: 'Blog', href: '#blog', number: '05' },
+  { name: 'About', href: '/#about', number: '01' },
+  { name: 'Skills', href: '/#skills', number: '02' },
+  { name: 'Education', href: '/#education', number: '03' },
+  { name: 'Projects', href: '/#projects', number: '04' },
+  { name: 'Blog', href: '/#blog', number: '05' },
 ]
 
 export function Navbar() {
@@ -21,7 +21,7 @@ export function Navbar() {
     const handleScroll = () => {
       setHasScrolled(window.scrollY > 60)
 
-      const sections = navItems.map(item => item.href.substring(1))
+      const sections = navItems.map(item => item.href.replace('/#', ''))
       const current = sections.find(section => {
         const el = document.getElementById(section)
         if (el) {
@@ -96,7 +96,7 @@ export function Navbar() {
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-1">
               {navItems.map(item => {
-                const isActive = activeSection === item.href.substring(1)
+                const isActive = activeSection === item.href.replace('/#', '')
                 return (
                   <a
                     key={item.name}
@@ -217,7 +217,7 @@ export function Navbar() {
                         animate={{ scaleX: 1 }}
                         transition={{ delay: index * 0.07 + 0.2, duration: 0.4 }}
                         style={{
-                          background: activeSection === item.href.substring(1)
+                          background: activeSection === item.href.replace('/#', '')
                             ? 'linear-gradient(90deg, #6366f1, #8b5cf6)'
                             : 'rgba(255,255,255,0.1)',
                         }}
@@ -225,7 +225,7 @@ export function Navbar() {
                       <span
                         className="text-4xl font-light tracking-tight transition-colors duration-200"
                         style={{
-                          color: activeSection === item.href.substring(1)
+                          color: activeSection === item.href.replace('/#', '')
                             ? '#818cf8'
                             : 'var(--text-primary)',
                         }}

@@ -8,14 +8,12 @@ import { Blog } from '@/components/Blog'
 import { Footer } from '@/components/Footer'
 import { AIChat } from '@/components/AIChat'
 import { ScrollProgress } from '@/components/ScrollProgress'
-import { CustomCursor } from '@/components/CustomCursor'
 
 export default function Home() {
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg-primary)' }}>
       <ScrollProgress />
-      <CustomCursor />
-      <Navbar />
+<Navbar />
       <Hero />
       <About />
       <Skills />
