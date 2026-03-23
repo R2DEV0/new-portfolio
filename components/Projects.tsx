@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { projects } from '@/data/projects'
 import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react'
+import { TiltCard } from './TiltCard'
+import { ScrambleText } from './ScrambleText'
 
 const companyColors: Record<string, { color: string; bg: string; border: string }> = {
   'AREA15': {
@@ -39,22 +41,14 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ delay: index * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+    >
+    <TiltCard
       className="group relative rounded-2xl overflow-hidden glow-card transition-all duration-300"
       style={{
         background: 'var(--bg-card)',
-        border: '1px solid var(--border)',
-      }}
-      onMouseEnter={e => {
-        const el = e.currentTarget as HTMLElement
-        el.style.borderColor = style.border
-        el.style.boxShadow = `0 0 30px ${style.color}20, 0 8px 40px rgba(0,0,0,0.4)`
-        el.style.transform = 'translateY(-2px)'
-      }}
-      onMouseLeave={e => {
-        const el = e.currentTarget as HTMLElement
-        el.style.borderColor = 'var(--border)'
-        el.style.boxShadow = ''
-        el.style.transform = 'translateY(0)'
+        border: `1px solid var(--border)`,
+        boxShadow: `0 0 0px ${style.color}00`,
+        transition: 'border-color 0.3s, box-shadow 0.3s',
       }}
     >
       {/* Top accent bar */}
@@ -194,6 +188,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           )}
         </button>
       </div>
+    </TiltCard>
     </motion.div>
   )
 }
@@ -218,7 +213,7 @@ export function Projects() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p className="section-label mb-3">Portfolio</p>
+          <p className="section-label mb-3"><ScrambleText text="Portfolio" /></p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text pb-2">Featured Projects</h2>
           <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
             {projects.length} production projects across 3 companies

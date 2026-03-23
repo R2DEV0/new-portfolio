@@ -6,7 +6,9 @@
       "Bash(npm install:*)",
       "mcp__Windows-MCP__PowerShell",
       "mcp__Desktop_Commander__start_process",
-      "mcp__Desktop_Commander__read_process_output"
+      "mcp__Desktop_Commander__read_process_output",
+      "Bash(npx tsc:*)",
+      "Bash(node_modules/.bin/tsc --noEmit)"
     ]
   }
 }

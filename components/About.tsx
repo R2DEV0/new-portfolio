@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Mail, FileText, MapPin, Briefcase } from 'lucide-react'
+import { ScrambleText } from './ScrambleText'
 
 interface StatItem {
   value: number
@@ -101,7 +102,7 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="section-label mb-3">Background</p>
+          <p className="section-label mb-3"><ScrambleText text="Background" /></p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text pb-2">About Me</h2>
         </motion.div>
 

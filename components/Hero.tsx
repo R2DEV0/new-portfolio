@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Github, Linkedin, FileText, Instagram, Facebook, ArrowDown, Zap } from 'lucide-react'
+import { MagneticWrapper } from './MagneticWrapper'
 
 const ROLES = [
   'Senior Full-Stack Developer',
@@ -377,35 +378,34 @@ export function Hero() {
           className="flex justify-center gap-3 flex-wrap mb-16"
         >
           {socialLinks.map(({ href, icon: Icon, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="p-3 rounded-xl transition-all duration-200"
-              style={{
-                background: 'var(--bg-card)',
-                border: '1px solid var(--border)',
-                color: 'var(--text-secondary)',
-              }}
-              onMouseEnter={e => {
-                const el = e.currentTarget as HTMLElement
-                el.style.borderColor = 'rgba(99,102,241,0.5)'
-                el.style.color = '#818cf8'
-                el.style.boxShadow = '0 0 12px rgba(99,102,241,0.25)'
-                el.style.transform = 'translateY(-2px)'
-              }}
-              onMouseLeave={e => {
-                const el = e.currentTarget as HTMLElement
-                el.style.borderColor = 'var(--border)'
-                el.style.color = 'var(--text-secondary)'
-                el.style.boxShadow = 'none'
-                el.style.transform = 'translateY(0)'
-              }}
-            >
-              <Icon className="w-5 h-5" />
-            </a>
+            <MagneticWrapper key={label} strength={0.4}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="p-3 rounded-xl transition-all duration-200 block"
+                style={{
+                  background: 'var(--bg-card)',
+                  border: '1px solid var(--border)',
+                  color: 'var(--text-secondary)',
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLElement
+                  el.style.borderColor = 'rgba(99,102,241,0.5)'
+                  el.style.color = '#818cf8'
+                  el.style.boxShadow = '0 0 12px rgba(99,102,241,0.25)'
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLElement
+                  el.style.borderColor = 'var(--border)'
+                  el.style.color = 'var(--text-secondary)'
+                  el.style.boxShadow = 'none'
+                }}
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            </MagneticWrapper>
           ))}
         </motion.div>
       </div>

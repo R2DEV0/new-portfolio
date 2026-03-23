@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { skills, skillCategories, type Skill } from '@/data/skills'
+import { ScrambleText } from './ScrambleText'
 
 type Category = keyof typeof skillCategories | 'all'
 
@@ -104,7 +105,7 @@ export function Skills() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <p className="section-label mb-3">Toolkit</p>
+          <p className="section-label mb-3"><ScrambleText text="Toolkit" /></p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text pb-2">Skills & Technologies</h2>
           <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
             {skills.length} technologies across {Object.keys(skillCategories).length} domains

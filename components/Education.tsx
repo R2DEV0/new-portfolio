@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { education } from '@/data/education'
 import { GraduationCap, Award, ExternalLink } from 'lucide-react'
+import { ScrambleText } from './ScrambleText'
 
 const eduColors = [
   { color: '#6366f1', bg: 'rgba(99,102,241,0.08)', border: 'rgba(99,102,241,0.25)' },
@@ -26,7 +27,7 @@ export function Education() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p className="section-label mb-3">Credentials</p>
+          <p className="section-label mb-3"><ScrambleText text="Credentials" /></p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text pb-2">Education & Certs</h2>
         </motion.div>
 

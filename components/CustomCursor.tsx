@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, useSpring, useMotionValue } from 'framer-motion'
 
 export function CustomCursor() {
@@ -21,7 +21,6 @@ export function CustomCursor() {
   const ringY = useSpring(mouseY, ringConfig)
 
   useEffect(() => {
-    // Don't render on touch devices
     if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
       setIsTouchDevice(true)
       return
@@ -43,9 +42,7 @@ export function CustomCursor() {
       if (
         target.matches('a, button, [role="button"], input, textarea, select, label, [data-cursor="pointer"]')
         || target.closest('a, button, [role="button"]')
-      ) {
-        setIsHovering(true)
-      }
+      ) setIsHovering(true)
     }
 
     const onHoverEnd = (e: Event) => {
@@ -53,9 +50,7 @@ export function CustomCursor() {
       if (
         target.matches('a, button, [role="button"], input, textarea, select, label, [data-cursor="pointer"]')
         || target.closest('a, button, [role="button"]')
-      ) {
-        setIsHovering(false)
-      }
+      ) setIsHovering(false)
     }
 
     window.addEventListener('mousemove', onMove)

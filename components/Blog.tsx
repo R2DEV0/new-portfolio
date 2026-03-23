@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { getAllBlogPosts } from '@/data/blog'
 import { Calendar, User, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import { ScrambleText } from './ScrambleText'
 
 const categoryColors: Record<string, { color: string; bg: string; border: string }> = {
   Electronics: { color: '#22d3ee', bg: 'rgba(34,211,238,0.08)', border: 'rgba(34,211,238,0.2)' },
@@ -31,7 +32,7 @@ export function Blog() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p className="section-label mb-3">Writing</p>
+          <p className="section-label mb-3"><ScrambleText text="Writing" /></p>
           <h2 className="text-4xl sm:text-5xl font-bold gradient-text pb-2">Blog</h2>
           <p className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
             Thoughts on tech, leadership, and the builder mindset
