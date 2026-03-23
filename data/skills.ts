@@ -42,6 +42,9 @@ export const skills: Skill[] = [
   { name: 'Docker', level: 80, category: 'cloud' },
   { name: 'Pantheon', level: 90, category: 'cloud' },
   { name: 'Cloudflare', level: 85, category: 'cloud' },
+  { name: 'Vercel', level: 90, category: 'cloud' },
+  { name: 'Strapi', level: 88, category: 'cloud' },
+  { name: 'Sanity', level: 82, category: 'cloud' },
   
   // Management
   { name: 'Project Management', level: 95, category: 'management' },
@@ -50,6 +53,14 @@ export const skills: Skill[] = [
   { name: 'Communication', level: 100, category: 'management' },
   { name: 'Problem Solving', level: 90, category: 'management' },
   { name: 'Decision Making', level: 95, category: 'management' },
+  { name: 'Agile / Scrum', level: 90, category: 'management' },
+  { name: 'Sprint Planning', level: 88, category: 'management' },
+  { name: 'Code Reviews', level: 95, category: 'management' },
+  { name: 'Mentorship', level: 85, category: 'management' },
+  { name: 'Stakeholder Communication', level: 90, category: 'management' },
+  { name: 'Technical Documentation', level: 85, category: 'management' },
+  { name: 'Cross-Functional Collaboration', level: 92, category: 'management' },
+  { name: 'Roadmap Planning', level: 88, category: 'management' },
 
   // Other
   { name: 'AI Integration', level: 95, category: 'other' },

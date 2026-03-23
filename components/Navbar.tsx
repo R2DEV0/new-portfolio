@@ -16,6 +16,15 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
   const [hasScrolled, setHasScrolled] = useState(false)
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+    const checkTheme = () => setIsDark(document.documentElement.classList.contains('dark'))
+    checkTheme()
+    const observer = new MutationObserver(checkTheme)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,12 +67,14 @@ export function Navbar() {
           <div
             className="flex justify-between items-center transition-all duration-500"
             style={hasScrolled ? {
-              background: 'rgba(9,9,33,0.8)',
+              background: isDark ? 'rgba(9,9,33,0.85)' : 'rgba(255,255,255,0.88)',
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
               borderRadius: '100px',
               padding: '10px 20px',
-              boxShadow: '0 4px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(99,102,241,0.12)',
+              boxShadow: isDark
+                ? '0 4px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(99,102,241,0.12)'
+                : '0 4px 32px rgba(0,0,0,0.08), 0 0 0 1px rgba(99,102,241,0.15)',
             } : {}}
           >
             {/* Logo */}

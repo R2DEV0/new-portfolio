@@ -418,7 +418,7 @@ export function Hero() {
         transition={{ delay: 1.2 }}
       >
         <span className="text-xs font-mono tracking-widest uppercase" style={{ color: 'var(--text-muted)' }}>
-          scroll
+          explore
         </span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
