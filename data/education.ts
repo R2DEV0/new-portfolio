@@ -10,22 +10,27 @@ export interface Education {
 export const education: Education[] = [
   {
     institution: 'Amazon Web Services',
-    degree: 'Associate AWS Certified Developer',
+    degree: 'AWS Certified Developer – Associate',
     location: 'Remote',
+    period: '2024',
     certification: true,
-    description: 'Certified in designing, developing, and deploying cloud-based applications using AWS services.',
+    description:
+      'Certified in designing, building, deploying, and debugging cloud applications on AWS — the foundation behind the 99.9%-uptime infrastructure I run in production.',
   },
   {
     institution: 'City University of Seattle',
-    degree: 'BS Computer Science',
+    degree: 'B.S. Computer Science',
     location: 'Seattle, WA',
-    description: 'Comprehensive study of computer science fundamentals, software engineering, and modern development practices.',
+    period: '2021',
+    description:
+      'Software engineering, data structures, algorithms, and systems design — the core toolkit I apply to full-stack architecture every day.',
   },
   {
     institution: 'City University of Seattle',
-    degree: 'BS Business Administration',
+    degree: 'B.S. Business Administration',
     location: 'Seattle, WA',
-    description: 'Business management and administration with focus on technology integration and strategic planning.',
+    period: '2017',
+    description:
+      'Business strategy and management that lets me translate technical work into measurable business outcomes and speak fluently with stakeholders.',
   },
 ]
-

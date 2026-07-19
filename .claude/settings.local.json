@@ -8,7 +8,12 @@
       "mcp__Desktop_Commander__start_process",
       "mcp__Desktop_Commander__read_process_output",
       "Bash(npx tsc:*)",
-      "Bash(node_modules/.bin/tsc --noEmit)"
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(python -c \"import pypdf\")",
+      "Bash(py --version)",
+      "Bash(pip list *)",
+      "Bash(python -c ' *)",
+      "Bash(npm install *)"
     ]
   }
 }

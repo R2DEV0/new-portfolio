@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, forwardRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { skills, skillCategories, type Skill } from '@/data/skills'
 import { ScrambleText } from './ScrambleText'
@@ -11,10 +11,10 @@ const categoryMeta: Record<string, { icon: string; color: string; glow: string }
   all:        { icon: '⚡', color: '#6366f1', glow: 'rgba(99,102,241,0.3)' },
   frontend:   { icon: '🎨', color: '#22d3ee', glow: 'rgba(34,211,238,0.3)' },
   backend:    { icon: '⚙️', color: '#6366f1', glow: 'rgba(99,102,241,0.3)' },
-  tools:      { icon: '🔧', color: '#8b5cf6', glow: 'rgba(139,92,246,0.3)' },
   cloud:      { icon: '☁️', color: '#10b981', glow: 'rgba(16,185,129,0.3)' },
-  management: { icon: '🎯', color: '#f59e0b', glow: 'rgba(245,158,11,0.3)' },
-  other:      { icon: '🤖', color: '#ec4899', glow: 'rgba(236,72,153,0.3)' },
+  ai:         { icon: '🤖', color: '#ec4899', glow: 'rgba(236,72,153,0.3)' },
+  apis:       { icon: '🔌', color: '#8b5cf6', glow: 'rgba(139,92,246,0.3)' },
+  leadership: { icon: '🎯', color: '#f59e0b', glow: 'rgba(245,158,11,0.3)' },
 }
 
 function getLevelBadge(level: number) {
@@ -24,12 +24,14 @@ function getLevelBadge(level: number) {
   return { label: 'Familiar', color: '#94a3b8' }
 }
 
-function SkillPill({ skill, index, categoryColor }: { skill: Skill; index: number; categoryColor: string }) {
+const SkillPill = forwardRef<HTMLDivElement, { skill: Skill; index: number; categoryColor: string }>(
+  function SkillPill({ skill, index, categoryColor }, ref) {
   const [hovered, setHovered] = useState(false)
   const badge = getLevelBadge(skill.level)
 
   return (
     <motion.div
+      ref={ref}
       layout
       initial={{ opacity: 0, scale: 0.85 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -70,7 +72,7 @@ function SkillPill({ skill, index, categoryColor }: { skill: Skill; index: numbe
       </div>
     </motion.div>
   )
-}
+})
 
 function hexToRgb(hex: string): string {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)

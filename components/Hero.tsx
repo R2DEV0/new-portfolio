@@ -2,15 +2,15 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Github, Linkedin, FileText, Instagram, Facebook, ArrowDown, Zap } from 'lucide-react'
+import { Github, Linkedin, FileText, Instagram, Facebook, ArrowDown, Zap, TerminalSquare } from 'lucide-react'
 import { MagneticWrapper } from './MagneticWrapper'
 
 const ROLES = [
-  'Senior Full-Stack Developer',
-  'AI-Powered Dev Expert',
-  'MERN Stack Architect',
+  'Full-Stack Engineer',
+  'AI-Integrated Developer',
+  'MERN / Next.js Architect',
   'AWS Certified Developer',
-  'UI/UX Craftsman',
+  'Cloud & DevOps Builder',
 ]
 
 function useTypewriter(words: string[], speed = 75, deleteSpeed = 40, pause = 1800) {
@@ -173,10 +173,10 @@ const socialLinks = [
 ]
 
 const floatingCode = [
-  { code: 'const kevin = { role: "dev" }', delay: 0.5, x: '5%', y: '20%' },
-  { code: 'AWS.certified()', delay: 1.2, x: '78%', y: '15%' },
-  { code: '<MERN stack />', delay: 0.8, x: '82%', y: '65%' },
-  { code: 'AI.integrate()', delay: 1.5, x: '3%', y: '70%' },
+  { code: 'const kevin = { role: "engineer" }', delay: 0.5, x: '5%', y: '20%' },
+  { code: 'aws.deploy({ uptime: 99.9 })', delay: 1.2, x: '76%', y: '15%' },
+  { code: '<MERN /> + <AI />', delay: 0.8, x: '82%', y: '65%' },
+  { code: 'ship() // ~35% faster', delay: 1.5, x: '3%', y: '70%' },
 ]
 
 export function Hero() {
@@ -309,8 +309,8 @@ export function Hero() {
           className="text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
           style={{ color: 'var(--text-secondary)' }}
         >
-          Crafting high-performance digital experiences with MERN, AI tools, and cloud-native architecture.
-          Turning complex problems into elegant, scalable solutions.
+          7+ years building scalable web apps, cloud infrastructure, and AI-augmented experiences with
+          MERN, Next.js, and AWS — turning technology investments into measurable business outcomes.
         </motion.p>
 
         {/* CTA buttons */}
@@ -335,9 +335,9 @@ export function Hero() {
             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
           </a>
 
-          <a
-            href="/#about"
-            className="px-7 py-3 rounded-full font-semibold transition-all duration-300"
+          <button
+            onClick={() => window.dispatchEvent(new Event('open-terminal'))}
+            className="group px-7 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
             style={{
               background: 'var(--bg-card)',
               border: '1px solid var(--border)',
@@ -353,8 +353,12 @@ export function Hero() {
               ;(e.currentTarget as HTMLElement).style.boxShadow = 'none'
             }}
           >
-            Learn More
-          </a>
+            <TerminalSquare className="w-4 h-4" style={{ color: 'var(--indigo)' }} />
+            Open Terminal
+            <span className="hidden sm:inline text-xs font-mono opacity-50 group-hover:opacity-80 transition-opacity">
+              ~ press `
+            </span>
+          </button>
 
           <button
             onClick={copyEmail}

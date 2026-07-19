@@ -17,9 +17,28 @@ const libreBaskerville = Libre_Baskerville({
 })
 
 export const metadata: Metadata = {
-  title: 'Kevin Chancey | Full-Stack Developer',
-  description: 'Portfolio of Kevin R. Chancey - Senior Developer specializing in MERN stack, React, Next.js, and AWS',
-  keywords: ['developer', 'full-stack', 'react', 'next.js', 'aws', 'portfolio'],
+  metadataBase: new URL('https://kevtech.net'),
+  title: 'Kevin Chancey | Full-Stack Engineer & AI-Integrated Developer',
+  description:
+    'Kevin R. Chancey — Full-Stack Engineer with 7+ years building scalable web apps, cloud infrastructure, and AI-augmented experiences. MERN, Next.js, AWS, Cloudflare. AWS Certified.',
+  keywords: [
+    'Kevin Chancey', 'full-stack engineer', 'AI developer', 'MERN', 'React', 'Next.js',
+    'AWS', 'Cloudflare', 'Claude Code', 'Cursor', 'senior engineer', 'portfolio',
+  ],
+  authors: [{ name: 'Kevin R. Chancey' }],
+  openGraph: {
+    title: 'Kevin Chancey | Full-Stack Engineer & AI-Integrated Developer',
+    description:
+      '7+ years shipping scalable web apps, cloud infrastructure, and AI-augmented experiences. Explore the interactive terminal résumé.',
+    url: 'https://kevtech.net',
+    siteName: 'KevTech · Kevin Chancey',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kevin Chancey | Full-Stack Engineer & AI-Integrated Developer',
+    description: '7+ years shipping scalable web apps, cloud, and AI-augmented experiences. MERN · Next.js · AWS.',
+  },
 }
 
 export default function RootLayout({

@@ -101,6 +101,9 @@ export function Education() {
 
                     <p className="text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
                       {edu.location}
+                      {edu.period && (
+                        <span className="font-mono"> · {edu.period}</span>
+                      )}
                     </p>
 
                     {edu.description && (

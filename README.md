@@ -8,10 +8,14 @@ A modern, responsive developer portfolio built with Next.js 14, TypeScript, and 
 - 📱 **Fully Responsive** - Works seamlessly on all devices
 - ⚡ **Fast Performance** - Optimized with Next.js 14 and modern best practices
 - 🎨 **Modern Design** - Clean, professional, and fun UI with smooth animations
-- 📊 **Skills Visualization** - Interactive skill bars with categorized display
-- 🚀 **Project Showcase** - Detailed project cards with technologies and highlights
+- 📊 **Skills Visualization** - Interactive, categorized skill pills with proficiency badges
+- 🚀 **Project Showcase** - Detailed project cards with metrics, technologies, and highlights
 - 🎓 **Education Section** - Academic achievements and certifications
-- 🤖 **AI Chat Assistant** - Interactive AI-powered chat to answer questions about Kevin
+- 🖥️ **Interactive Terminal** - A real, keyboard-driven terminal (`kevin@kevtech:~`) with typed
+  commands (`help`, `about`, `experience`, `projects`, `stats`, `neofetch`, easter eggs) that work
+  **offline**, plus natural-language questions answered by OpenAI when a key is set and by a built-in
+  local knowledge base when it isn't. Full-screen on mobile, floating window on desktop. Open it with
+  the ›_ button, the "Open Terminal" hero CTA, or the `` ` `` key.
 
 ## Tech Stack
 
@@ -43,15 +47,14 @@ cd kevin_profile
 npm install
 ```
 
-3. Set up environment variables:
+3. (Optional) Set up environment variables:
 ```bash
-# Create a .env.local file in the root directory
-cp .env.local.example .env.local
-
-# Add your OpenAI API key
+# Create a .env.local file in the root directory and add your OpenAI API key.
 # Get your API key from: https://platform.openai.com/api-keys
 OPENAI_API_KEY=your_openai_api_key_here
 ```
+> The terminal assistant works **without** an API key — it falls back to a built-in local
+> knowledge base. Add `OPENAI_API_KEY` only if you want free-form questions answered by GPT.
 
 4. Run the development server:
 ```bash
@@ -73,7 +76,7 @@ This project is configured for easy deployment to Netlify:
 
 1. Push your code to GitHub
 2. Connect your repository to Netlify
-3. Add your environment variable in Netlify:
+3. (Optional) Add your environment variable in Netlify:
    - Go to Site settings → Environment variables
    - Add `OPENAI_API_KEY` with your OpenAI API key
 4. Netlify will automatically detect the Next.js configuration
@@ -81,7 +84,8 @@ This project is configured for easy deployment to Netlify:
 
 The `netlify.toml` file is already configured with the Next.js plugin.
 
-**Note**: Make sure to add your `OPENAI_API_KEY` as an environment variable in Netlify for the AI chat feature to work.
+**Note**: `OPENAI_API_KEY` is optional — the terminal answers from a local knowledge base without it.
+Add the key only to enable GPT-powered free-form answers.
 
 ## Project Structure
 
@@ -95,8 +99,8 @@ The `netlify.toml` file is already configured with the Next.js plugin.
 │   │   └── chat/
 │   │       └── route.ts  # OpenAI API route
 ├── components/
-│   ├── About.tsx         # About me section
-│   ├── AIChat.tsx        # AI chat assistant component
+│   ├── About.tsx         # About me section (stats, bio, timeline)
+│   ├── Terminal.tsx      # Interactive terminal assistant (offline-first)
 │   ├── Education.tsx     # Education and certifications
 │   ├── Footer.tsx        # Footer component
 │   ├── Hero.tsx          # Hero/landing section

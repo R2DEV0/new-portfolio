@@ -6,7 +6,7 @@ import { Education } from '@/components/Education'
 import { Projects } from '@/components/Projects'
 import { Blog } from '@/components/Blog'
 import { Footer } from '@/components/Footer'
-import { AIChat } from '@/components/AIChat'
+import { Terminal } from '@/components/Terminal'
 import { ScrollProgress } from '@/components/ScrollProgress'
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
       <Projects />
       <Blog />
       <Footer />
-      <AIChat />
+      <Terminal />
     </main>
   )
 }

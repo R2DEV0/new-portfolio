@@ -14,10 +14,19 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { value: 50, suffix: 'K+', label: 'Weekly Visitors Served', color: '#6366f1' },
-  { value: 20, suffix: 'K+', prefix: '$', label: 'Monthly Revenue Generated', color: '#8b5cf6' },
-  { value: 99.9, suffix: '%', label: 'Platform Uptime', color: '#22d3ee' },
-  { value: 7, suffix: '+', label: 'Years of Experience', color: '#10b981' },
+  { value: 7, suffix: '+', label: 'Years of Experience', color: '#6366f1' },
+  { value: 2, suffix: 'M+', label: 'Students Reached', color: '#8b5cf6' },
+  { value: 8500, suffix: '+', label: 'Daily Kiosk Customers', color: '#22d3ee' },
+  { value: 99.9, suffix: '%', label: 'Uptime Maintained', color: '#10b981' },
+]
+
+// Secondary impact metrics — quick-hit résumé numbers
+const impactChips: { value: string; label: string; color: string }[] = [
+  { value: '50K+', label: 'Chrome extension installs', color: '#6366f1' },
+  { value: '800K+', label: 'marketing emails / month', color: '#8b5cf6' },
+  { value: '+300%', label: 'organic traffic growth', color: '#22d3ee' },
+  { value: '~35%', label: 'faster delivery with AI', color: '#10b981' },
+  { value: '6+', label: 'production sites', color: '#ec4899' },
 ]
 
 function CountUp({ target, suffix, prefix = '', color }: { target: number; suffix: string; prefix?: string; color: string }) {
@@ -39,9 +48,11 @@ function CountUp({ target, suffix, prefix = '', color }: { target: number; suffi
     requestAnimationFrame(tick)
   }, [inView, target])
 
+  const formatted = count >= 1000 ? Math.round(count).toLocaleString() : count
+
   return (
     <span ref={ref} className="tabular-nums" style={{ color }}>
-      {prefix}{count}{suffix}
+      {prefix}{formatted}{suffix}
     </span>
   )
 }
@@ -49,37 +60,39 @@ function CountUp({ target, suffix, prefix = '', color }: { target: number; suffi
 const workHistory = [
   {
     company: 'AREA15',
-    role: 'Senior Full-Stack Developer',
-    period: '2023 – Present',
-    location: 'Vancouver, WA (Remote)',
+    role: 'Senior Engineer',
+    period: 'Feb 2023 – Present',
+    location: 'Las Vegas / Remote',
     color: '#6366f1',
     highlights: [
-      'Built Android kiosk ticketing system serving 50K+ weekly visitors',
-      'Developed locker rental kiosk generating $20K+ monthly revenue',
-      'Created immersive MERN + AI experiences',
+      'Architected AWS + Cloudflare DNS infra — 99.9% uptime across 6+ production sites',
+      'Android Stripe ticketing kiosks — 8,500+ customers/day, +15% ticket sales',
+      'Integrated AI tools (Claude Code/Cowork, Cursor) cutting delivery time ~35%',
+      'CI/CD (GitHub Actions) + unified Stripe, Square, HubSpot & Strapi APIs',
     ],
   },
   {
     company: 'Strategy9',
-    role: 'Full-Stack Developer',
-    period: '2021 – 2024',
+    role: 'Software Developer',
+    period: 'Aug 2021 – Oct 2024',
     location: 'Remote',
     color: '#8b5cf6',
     highlights: [
-      'SMS valet system reducing operational time by 40%',
-      'Email/SMS marketing platform sending 800K+ monthly emails',
+      'SMS valet queue platform (C#/ASP.NET Core) cut management time 40%',
+      '800K+ monthly emails at 99%+ compliance across 12+ casino clients',
+      'Sportspool data apps tripled user data capture for targeted marketing',
     ],
   },
   {
     company: 'J Taylor Education',
-    role: 'Lead Developer',
-    period: '2019 – 2024',
+    role: 'Lead Software Developer',
+    period: 'Jun 2019 – Oct 2024',
     location: 'Remote',
     color: '#22d3ee',
     highlights: [
-      'Virtual education platform with 99.9% uptime',
-      'Chrome extension with 50,000+ downloads',
-      'Improved platform speed by 25%',
+      'AWS infra (EC2, S3, CloudFront) — 99.9% uptime serving 2M+ students',
+      '25% faster page loads & 40% better scalability via MERN refactor',
+      'Chrome extension: 50K+ installs, +300% organic traffic; e-learning in 45 states / 9 countries',
     ],
   },
 ]
@@ -134,6 +147,26 @@ export function About() {
           ))}
         </motion.div>
 
+        {/* Secondary impact metrics */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="flex flex-wrap justify-center gap-2.5 mb-16"
+        >
+          {impactChips.map(chip => (
+            <div
+              key={chip.label}
+              className="flex items-center gap-2 px-3.5 py-2 rounded-full text-xs sm:text-sm"
+              style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
+            >
+              <span className="font-bold tabular-nums" style={{ color: chip.color }}>{chip.value}</span>
+              <span style={{ color: 'var(--text-secondary)' }}>{chip.label}</span>
+            </div>
+          ))}
+        </motion.div>
+
         {/* Two-column: bio + work history */}
         <div className="grid lg:grid-cols-2 gap-10">
           {/* Bio */}
@@ -148,20 +181,26 @@ export function About() {
             </h3>
             <div className="space-y-4 text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               <p>
-                I'm a <strong style={{ color: 'var(--text-primary)' }}>Senior Full-Stack Developer</strong> currently
-                at <strong style={{ color: '#6366f1' }}>AREA15</strong> in Las Vegas (working remotely from Vancouver, WA), building revenue-generating
-                entertainment and kiosk systems that interact with tens of thousands of visitors every week.
+                I'm a <strong style={{ color: 'var(--text-primary)' }}>Full-Stack Engineer &amp; AI-integrated developer</strong> with{' '}
+                <strong style={{ color: 'var(--text-primary)' }}>7+ years</strong> shipping scalable web apps, cloud
+                infrastructure, and revenue-driving digital experiences. Right now I'm a{' '}
+                <strong style={{ color: '#6366f1' }}>Senior Engineer at AREA15</strong> (Las Vegas / remote), running the
+                infrastructure and products behind a high-traffic entertainment venue.
               </p>
               <p>
-                I leverage cutting-edge AI development tools — <strong style={{ color: 'var(--text-primary)' }}>Cursor</strong>,{' '}
-                <strong style={{ color: 'var(--text-primary)' }}>Claude Code</strong>, and{' '}
-                <strong style={{ color: 'var(--text-primary)' }}>Claude CoWork</strong> — daily to ship high-quality
-                solutions faster than traditional workflows allow.
+                I lean hard into <strong style={{ color: 'var(--text-primary)' }}>AI-augmented development</strong> —{' '}
+                <strong style={{ color: 'var(--text-primary)' }}>Claude Code</strong>,{' '}
+                <strong style={{ color: 'var(--text-primary)' }}>Claude Cowork</strong>,{' '}
+                <strong style={{ color: 'var(--text-primary)' }}>Cursor</strong>, and{' '}
+                <strong style={{ color: 'var(--text-primary)' }}>ChatGPT</strong> — to cut feature delivery time by roughly
+                35% while keeping quality high.
               </p>
               <p>
-                My expertise spans Android kiosks, MERN stack apps, custom WordPress plugins, and deep API integrations
-                (Stripe, Square, HubSpot, Strapi). I'm AWS certified and hold dual degrees in Computer Science and
-                Business Administration.
+                My stack spans <strong style={{ color: 'var(--text-primary)' }}>MERN / Next.js</strong>, AWS, Cloudflare
+                DNS, and CI/CD, plus deep API integrations (Stripe, Square, HubSpot, Strapi, Twilio). I'm{' '}
+                <strong style={{ color: 'var(--text-primary)' }}>AWS Certified</strong> and hold dual degrees in Computer
+                Science and Business Administration — so I translate technology investments into measurable business
+                outcomes.
               </p>
             </div>
 

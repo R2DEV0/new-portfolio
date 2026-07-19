@@ -1,16 +1,24 @@
-# AI Chat Assistant Setup Guide
+# Terminal Assistant Setup Guide
 
 ## Overview
 
-The portfolio includes an interactive AI chat assistant powered by OpenAI that allows visitors to ask questions about Kevin's experience, skills, projects, and background.
+The portfolio's signature feature is an **interactive terminal** (`kevin@kevtech:~`) that lets visitors
+explore Kevin's background. It runs typed commands instantly and offline (`help`, `about`, `experience`,
+`projects`, `skills`, `stats`, `neofetch`, `contact`, `resume`, plus easter eggs). Free-form questions are
+answered by OpenAI **when an API key is configured**, and by a built-in local knowledge base when it isn't —
+so the terminal is never broken, even with no key.
+
+> **The `OPENAI_API_KEY` below is optional.** Without it, the terminal still answers questions from the
+> local knowledge base in `components/Terminal.tsx` (`localAnswer`). Add the key only to enable GPT-powered
+> free-form responses via `app/api/chat/route.ts`.
 
 ## Features
 
-- 🤖 **Interactive Chat** - Floating chat button in the bottom-right corner
-- 💬 **Conversational** - Maintains conversation context
-- 🎨 **Beautiful UI** - Matches the portfolio's design with animations
-- 📱 **Mobile Responsive** - Works perfectly on all devices
-- 🔒 **Secure** - API key stored server-side only
+- 🖥️ **Interactive Terminal** - Real keyboard-driven CLI with command history (↑/↓) and Tab autocomplete
+- ⚡ **Offline-First** - Typed commands and Q&A fallback work with zero configuration
+- 💬 **AI-Enhanced** - Optional OpenAI integration for natural-language answers, with conversation context
+- 📱 **Fully Responsive** - Full-screen on mobile, floating window on desktop
+- 🔒 **Secure** - API key stored server-side only, never exposed to the client
 
 ## Setup Instructions
 

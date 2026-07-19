@@ -39,6 +39,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, [theme, mounted])
 
+  // Allow any component (e.g. the terminal) to toggle the theme in-sync
+  useEffect(() => {
+    const handler = () => setTheme(prev => (prev === 'light' ? 'dark' : 'light'))
+    window.addEventListener('app:toggle-theme', handler)
+    return () => window.removeEventListener('app:toggle-theme', handler)
+  }, [])
+
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light')
   }
