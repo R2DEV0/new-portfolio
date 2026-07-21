@@ -16,17 +16,17 @@ interface StatItem {
 const stats: StatItem[] = [
   { value: 7, suffix: '+', label: 'Years of Experience', color: '#6366f1' },
   { value: 2, suffix: 'M+', label: 'Students Reached', color: '#8b5cf6' },
-  { value: 8500, suffix: '+', label: 'Daily Kiosk Customers', color: '#22d3ee' },
+  { value: 11000, suffix: '+', label: 'Daily Kiosk Customers', color: '#22d3ee' },
   { value: 99.9, suffix: '%', label: 'Uptime Maintained', color: '#10b981' },
 ]
 
 // Secondary impact metrics — quick-hit résumé numbers
 const impactChips: { value: string; label: string; color: string }[] = [
   { value: '50K+', label: 'Chrome extension installs', color: '#6366f1' },
-  { value: '800K+', label: 'marketing emails / month', color: '#8b5cf6' },
+  { value: '1M+', label: 'marketing emails / month', color: '#8b5cf6' },
   { value: '+300%', label: 'organic traffic growth', color: '#22d3ee' },
   { value: '~35%', label: 'faster delivery with AI', color: '#10b981' },
-  { value: '6+', label: 'production sites', color: '#ec4899' },
+  { value: '30+', label: 'production sites', color: '#ec4899' },
 ]
 
 function CountUp({ target, suffix, prefix = '', color }: { target: number; suffix: string; prefix?: string; color: string }) {

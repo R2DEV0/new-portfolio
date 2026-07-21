@@ -13,7 +13,10 @@
       "Bash(py --version)",
       "Bash(pip list *)",
       "Bash(python -c ' *)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(gh auth *)",
+      "Bash(gh --version)",
+      "PowerShell($g = Get-Command gh -ErrorAction SilentlyContinue; if \\($g\\) { \"gh found at: $\\($g.Source\\)\"; gh auth status } else { \"gh NOT found\"; \"--- checking git credential config ---\"; git config --global credential.helper; \"--- current git user ---\"; git config user.name; git config user.email })"
     ]
   }
 }
